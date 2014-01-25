@@ -7,6 +7,8 @@ Classe PHP de connexion simplifiée à une base de données via PDO MySQL
 Utilisation
 ===========
 
+    require_conce 'database.class.php';
+    
     $config = new database();
     
     if($config) {
