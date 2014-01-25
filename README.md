@@ -7,19 +7,19 @@ Classe PHP de connexion simplifiée à une base de données via PDO MySQL
 Utilisation
 ===========
 
-$config = new database();
+    $config = new database();
+    
+    if($config) {
+        $db = $config->getDataBase();
 
-if($config) {
-    $db = $config->getDataBase();
+        $requete = $db->prepare("REQUETE");
+        if($requete->execute()) {
+            // Traitement
+        } else {
+            $config->getErreur();
+        }
 
-    $requete = $db->prepare("REQUETE");
-    if($requete->execute()) {
-        // Traitement
+        $requete->closeCursor();
     } else {
         $config->getErreur();
     }
-
-    $requete->closeCursor();
-} else {
-    $config->getErreur();
-}
