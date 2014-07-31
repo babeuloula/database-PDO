@@ -10,7 +10,7 @@ Utilisation
     
 $config = new database();
     
-if($config) {
+if($config->conn) {
     $db = $config->getDataBase();
 
     $requete = $db->prepare("REQUETE");
